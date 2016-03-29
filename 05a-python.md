@@ -32,6 +32,11 @@ Describe Python's `lambda`. What is it, and what is it used for? Give at least o
 
 Lambda is used to create functions without a name. This can save time by eliminating the need to define functions.
 
+Example:
+
+avg_temps = [('portland',50),('boston',55),('new haven',57),('new york','60'),('cincinatti',59),('anchorage',15),('des moines',56)]
+print sorted(avg_temps,key=lambda t:t[1])
+
 
 
 ---
