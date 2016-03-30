@@ -20,6 +20,13 @@ def donuts(count):
     """
     raise NotImplementedError
 
+Answer:
+
+def donuts(count):
+	if count >= 10:
+		print 'Number of donuts: many' 
+	else: 
+		print 'Number of donuts: ' + str(count)
 
 def both_ends(s):
     """
@@ -39,6 +46,13 @@ def both_ends(s):
     """
     raise NotImplementedError
 
+Answer:
+
+def both_ends(s):
+	if len(s) < 2:
+		print ''
+	else:
+		print s[0:2] + s[-2] + s[-1]
 
 def fix_start(s):
     """
@@ -58,6 +72,14 @@ def fix_start(s):
     """
     raise NotImplementedError
 
+Answer: 
+    
+def fix_start(s):
+	c1 = s[0]
+	s_wo_c1 = s[1:]
+	s_w_ast = s_wo_c1.replace(c1,'*')
+	new_s = c1 + s_w_ast
+	print new_s
 
 def mix_up(a, b):
     """
@@ -76,6 +98,13 @@ def mix_up(a, b):
     """
     raise NotImplementedError
 
+def mix_up(a, b):
+	c2a = a[0:2]
+	c2b = b[0:2]
+	new_a = a[2:]
+	new_b = b[2:]
+	new_combo = c2b + new_a + ' ' + c2a + new_b
+	print new_combo
 
 def verbing(s):
     """
@@ -92,6 +121,16 @@ def verbing(s):
     'do'
     """
     raise NotImplementedError
+    
+Answer:
+    
+def verbing(s):
+	if len(s) <= 3:
+		print s
+	elif s[-3:] == 'ing':
+		print s + 'ly'
+	else:
+		print s + 'ing'
 
 
 def not_bad(s):
