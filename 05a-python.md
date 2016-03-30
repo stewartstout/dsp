@@ -45,7 +45,38 @@ print sorted(avg_temps,key=lambda t:t[1])
 
 Explain list comprehensions. Give examples and show equivalents with `map` and `filter`. How do their capabilities compare? Also demonstrate set comprehensions and dictionary comprehensions.
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+List comprehensions create new lists using existing ones. They transform an iterable input into new sequences with an optional filter. They are similar to for loops but can be written in a single line.
+
+The example below illustrates the difference between a for loop and list comprehension using a simple example that prints the squares of even integers between 1 and 10.
+
+For loop:
+
+for i in range(10):
+  if i % 2 == 0:
+    print i*i
+    
+List comprehension:
+
+squares_of_evens = [i*i for i in range(10) if i % 2 == 0]
+print squares_of_evens
+
+List comprehensions are also similar to a 'map' followed by a 'filter'.
+
+For example, the list comprehension squares_of_evens above could be re-written as:
+
+squares_of_evens = map(lambda n:n*n, filter(lambda n:n%2 == 0, range(10))
+
+Though they accomplish the same task, list comprehensions are much faster than the 'map'/'filter' combination when a lambda is used.
+
+Set comprehensions and dictionary comprehensions are very similar.
+
+Below is an example of a set comprehension:
+
+vowels_in_a_word = {l for l in 'example word' if l in 'aeiou'}
+
+Dictionary comprehensions create keys and values from a list. Below is an example that returns even integers from 0 to 9 if those integers are even:
+
+{x:x*x for x in range(10) if x%2 == 0}
 
 ---
 
@@ -60,7 +91,7 @@ date_start = '01-02-2013'
 date_stop = '07-28-2015'
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+937
 
 b.  
 ```
@@ -68,7 +99,7 @@ date_start = '12312013'
 date_stop = '05282015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE (answer will be in number of days)
+513
 
 c.  
 ```
@@ -76,7 +107,7 @@ date_start = '15-Jan-1994'
 date_stop = '14-Jul-2015'  
 ```
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE  (answer will be in number of days)
+7850
 
 Place code in this file: [q5_datetime.py](python/q5_datetime.py)
 
