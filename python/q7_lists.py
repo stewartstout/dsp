@@ -17,6 +17,14 @@ def match_ends(words):
     """
     raise NotImplementedError
 
+Answer:
+    
+    def match_ends(words):
+	counter = 0
+	for a in words:
+		if len(a) >= 2 and a[0] == a[-1]:
+			counter +=1
+	print counter
 
 def front_x(words):
     """
@@ -34,6 +42,21 @@ def front_x(words):
     """
     raise NotImplementedError
 
+Answer:
+    
+def front_x(words):
+	x_list = []
+	other_list = []
+	for a in words:
+		if a[0] == 'x':
+			x_list.append(a)
+	x_list_sorted = sorted(x_list)
+	for a in words:
+		if a[0] != 'x':
+			other_list.append(a)
+	other_list_sorted = sorted(other_list)
+	new_list = x_list_sorted + other_list_sorted
+	print new_list
 
 def sort_last(tuples):
     """
@@ -51,7 +74,11 @@ def sort_last(tuples):
     """
     raise NotImplementedError
 
-
+Answer:
+    
+def sort_last(tuples):
+	print sorted(tuples,key = lambda x:x[-1])
+	
 def remove_adjacent(nums):
     """
     Given a list of numbers, return a list where all adjacent equal
@@ -70,6 +97,18 @@ def remove_adjacent(nums):
     """
     raise NotImplementedError
 
+Answer:
+    
+def remove_adjacent(nums):
+	i = 1
+	new_list = []
+	if len(nums) != 0:
+		new_list.append(nums[0])
+		while i < len(nums):
+			if nums[i] != nums[i - 1]:
+				new_list.append(nums[i])
+			i += 1
+	print new_list
 
 def linear_merge(list1, list2):
     """
@@ -86,3 +125,9 @@ def linear_merge(list1, list2):
     ['aa', 'aa', 'aa', 'bb', 'bb']
     """
     raise NotImplementedError
+
+Answer (though I'm 99% confident this is the wrong approach):
+
+def linear_merge(list1, list2):
+    new_list = sorted(list1 + list2)
+    print new_list
