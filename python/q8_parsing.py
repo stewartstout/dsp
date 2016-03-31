@@ -17,3 +17,31 @@ import csv
 
   def get_team(self, index_value, parsed_data):
     # COMPLETE THIS FUNCTION
+
+Answer:
+  
+  import csv
+
+with open('/Users/stewartstout/desktop/football.csv', 'r') as f:
+	reader = csv.reader(f)
+	your_list = list(reader)
+
+i = 1
+
+for row in your_list[1:]:
+	diff = int(row[5]) - int(row[6])
+	your_list[i].append(diff)
+	i += 1
+
+r = 2
+smallest_difference = ''
+min = your_list[r - 1][8]
+
+while r < len(your_list):
+	if your_list[r][8] < min:
+		smallest_difference = your_list[r][0]
+		min = your_list[r][8]
+		
+	r += 1
+
+print smallest_difference
