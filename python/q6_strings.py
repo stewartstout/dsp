@@ -152,6 +152,18 @@ def not_bad(s):
     """
     raise NotImplementedError
 
+Answer:
+
+def not_bad(s):
+
+	if s.count('not') == 0 or s.count('bad') == 0:
+		print s
+
+	elif s.find('bad') > s.find('not'):
+		print s[0:s.find('not')] + 'good' + s[s.find('bad') + 3:]
+
+	else:
+		print s
 
 def front_back(a, b):
     """
@@ -170,3 +182,12 @@ def front_back(a, b):
     'KitDontenut'
     """
     raise NotImplementedError
+
+Answer: 
+
+def front_back(a,b):
+	a_front = a[0:len(a)/2 + len(a)%2]
+	b_front = b[0:len(b)/2 + len(b)%2]
+	a_back = a[-len(a_front)+ len(a)%2:]
+	b_back = b[-len(b_front)+ len(b)%2:]
+	print a_front + b_front + a_back + b_back
